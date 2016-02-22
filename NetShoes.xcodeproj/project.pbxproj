@@ -1,0 +1,458 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		4402D60D1C7A2F8600159628 /* ProductListCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4402D60C1C7A2F8600159628 /* ProductListCollectionViewCell.swift */; };
+		4402D60F1C7A429800159628 /* ProductDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4402D60E1C7A429800159628 /* ProductDetailViewController.swift */; };
+		4402D6111C7A46AC00159628 /* ProductDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4402D6101C7A46AB00159628 /* ProductDetail.swift */; };
+		44222CC11C775C5900479A42 /* ServiceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44222CC01C775C5900479A42 /* ServiceManager.swift */; };
+		44222CC61C77804C00479A42 /* Product.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44222CC51C77804C00479A42 /* Product.swift */; };
+		44222CCA1C778FE700479A42 /* Products.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44222CC91C778FE700479A42 /* Products.swift */; };
+		44D516BF1C7645A500661B43 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44D516BE1C7645A500661B43 /* AppDelegate.swift */; };
+		44D516C11C7645A500661B43 /* ProductListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44D516C01C7645A500661B43 /* ProductListViewController.swift */; };
+		44D516C41C7645A500661B43 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 44D516C21C7645A500661B43 /* Main.storyboard */; };
+		44D516C61C7645A500661B43 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 44D516C51C7645A500661B43 /* Assets.xcassets */; };
+		9D8A50F5F8A7B8B3A4E07F5A /* Pods_NetShoes.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 751D119937BCE3E3D7EE99B2 /* Pods_NetShoes.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		4402D60C1C7A2F8600159628 /* ProductListCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProductListCollectionViewCell.swift; sourceTree = "<group>"; };
+		4402D60E1C7A429800159628 /* ProductDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProductDetailViewController.swift; sourceTree = "<group>"; };
+		4402D6101C7A46AB00159628 /* ProductDetail.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProductDetail.swift; sourceTree = "<group>"; };
+		44222CC01C775C5900479A42 /* ServiceManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ServiceManager.swift; sourceTree = "<group>"; };
+		44222CC51C77804C00479A42 /* Product.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Product.swift; sourceTree = "<group>"; };
+		44222CC91C778FE700479A42 /* Products.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Products.swift; sourceTree = "<group>"; };
+		44D516BB1C7645A500661B43 /* NetShoes.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NetShoes.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		44D516BE1C7645A500661B43 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		44D516C01C7645A500661B43 /* ProductListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductListViewController.swift; sourceTree = "<group>"; };
+		44D516C31C7645A500661B43 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		44D516C51C7645A500661B43 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		44D516CA1C7645A500661B43 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		751D119937BCE3E3D7EE99B2 /* Pods_NetShoes.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_NetShoes.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		BD12DBB9E312DB442FE8EB5D /* Pods-NetShoes.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NetShoes.release.xcconfig"; path = "Pods/Target Support Files/Pods-NetShoes/Pods-NetShoes.release.xcconfig"; sourceTree = "<group>"; };
+		E07B4CBCC67946DBE3E5C87D /* Pods-NetShoes.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NetShoes.debug.xcconfig"; path = "Pods/Target Support Files/Pods-NetShoes/Pods-NetShoes.debug.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		44D516B81C7645A500661B43 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9D8A50F5F8A7B8B3A4E07F5A /* Pods_NetShoes.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		30D00691894B606FCBF32273 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				751D119937BCE3E3D7EE99B2 /* Pods_NetShoes.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		4402D6031C79EAF600159628 /* ObjectModels */ = {
+			isa = PBXGroup;
+			children = (
+				44222CC51C77804C00479A42 /* Product.swift */,
+				4402D6101C7A46AB00159628 /* ProductDetail.swift */,
+				44222CC91C778FE700479A42 /* Products.swift */,
+			);
+			name = ObjectModels;
+			sourceTree = "<group>";
+		};
+		4402D6091C7A1B4600159628 /* ProductList */ = {
+			isa = PBXGroup;
+			children = (
+				4402D60C1C7A2F8600159628 /* ProductListCollectionViewCell.swift */,
+			);
+			name = ProductList;
+			sourceTree = "<group>";
+		};
+		4402D6161C7A5CD400159628 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Extensions;
+			sourceTree = "<group>";
+		};
+		44D516B21C7645A500661B43 = {
+			isa = PBXGroup;
+			children = (
+				44D516BD1C7645A500661B43 /* NetShoes */,
+				44D516BC1C7645A500661B43 /* Products */,
+				59251EA5D06F286B7E01EA14 /* Pods */,
+				30D00691894B606FCBF32273 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		44D516BC1C7645A500661B43 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				44D516BB1C7645A500661B43 /* NetShoes.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		44D516BD1C7645A500661B43 /* NetShoes */ = {
+			isa = PBXGroup;
+			children = (
+				44D516D21C764BEB00661B43 /* Model */,
+				44D516D11C764BAE00661B43 /* View */,
+				44D516D01C764B8600661B43 /* Controller */,
+			);
+			path = NetShoes;
+			sourceTree = "<group>";
+		};
+		44D516D01C764B8600661B43 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				44D516C01C7645A500661B43 /* ProductListViewController.swift */,
+				4402D60E1C7A429800159628 /* ProductDetailViewController.swift */,
+				4402D6091C7A1B4600159628 /* ProductList */,
+			);
+			name = Controller;
+			sourceTree = "<group>";
+		};
+		44D516D11C764BAE00661B43 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				44D516C51C7645A500661B43 /* Assets.xcassets */,
+				44D516D41C764C9100661B43 /* Storyboard */,
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
+		44D516D21C764BEB00661B43 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				4402D6161C7A5CD400159628 /* Extensions */,
+				44D516D31C764C7100661B43 /* Plist */,
+				4402D6031C79EAF600159628 /* ObjectModels */,
+				44D516BE1C7645A500661B43 /* AppDelegate.swift */,
+				44222CC01C775C5900479A42 /* ServiceManager.swift */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		44D516D31C764C7100661B43 /* Plist */ = {
+			isa = PBXGroup;
+			children = (
+				44D516CA1C7645A500661B43 /* Info.plist */,
+			);
+			name = Plist;
+			sourceTree = "<group>";
+		};
+		44D516D41C764C9100661B43 /* Storyboard */ = {
+			isa = PBXGroup;
+			children = (
+				44D516C21C7645A500661B43 /* Main.storyboard */,
+			);
+			name = Storyboard;
+			sourceTree = "<group>";
+		};
+		59251EA5D06F286B7E01EA14 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				E07B4CBCC67946DBE3E5C87D /* Pods-NetShoes.debug.xcconfig */,
+				BD12DBB9E312DB442FE8EB5D /* Pods-NetShoes.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		44D516BA1C7645A500661B43 /* NetShoes */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 44D516CD1C7645A500661B43 /* Build configuration list for PBXNativeTarget "NetShoes" */;
+			buildPhases = (
+				B44A4FA025F2FC7820AEFCF4 /* Check Pods Manifest.lock */,
+				44D516B71C7645A500661B43 /* Sources */,
+				44D516B81C7645A500661B43 /* Frameworks */,
+				44D516B91C7645A500661B43 /* Resources */,
+				00D17BD474802F862A4BBFD8 /* Embed Pods Frameworks */,
+				E5D14B0C8E45755170704C48 /* Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = NetShoes;
+			productName = NetShoes;
+			productReference = 44D516BB1C7645A500661B43 /* NetShoes.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		44D516B31C7645A500661B43 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0720;
+				LastUpgradeCheck = 0720;
+				ORGANIZATIONNAME = "Rael Alves";
+				TargetAttributes = {
+					44D516BA1C7645A500661B43 = {
+						CreatedOnToolsVersion = 7.2.1;
+						DevelopmentTeam = M9U3K3FQS8;
+					};
+				};
+			};
+			buildConfigurationList = 44D516B61C7645A500661B43 /* Build configuration list for PBXProject "NetShoes" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 44D516B21C7645A500661B43;
+			productRefGroup = 44D516BC1C7645A500661B43 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				44D516BA1C7645A500661B43 /* NetShoes */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		44D516B91C7645A500661B43 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				44D516C61C7645A500661B43 /* Assets.xcassets in Resources */,
+				44D516C41C7645A500661B43 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		00D17BD474802F862A4BBFD8 /* Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-NetShoes/Pods-NetShoes-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		B44A4FA025F2FC7820AEFCF4 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		E5D14B0C8E45755170704C48 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-NetShoes/Pods-NetShoes-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		44D516B71C7645A500661B43 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				44222CC11C775C5900479A42 /* ServiceManager.swift in Sources */,
+				44222CC61C77804C00479A42 /* Product.swift in Sources */,
+				4402D6111C7A46AC00159628 /* ProductDetail.swift in Sources */,
+				4402D60F1C7A429800159628 /* ProductDetailViewController.swift in Sources */,
+				44222CCA1C778FE700479A42 /* Products.swift in Sources */,
+				44D516C11C7645A500661B43 /* ProductListViewController.swift in Sources */,
+				4402D60D1C7A2F8600159628 /* ProductListCollectionViewCell.swift in Sources */,
+				44D516BF1C7645A500661B43 /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		44D516C21C7645A500661B43 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				44D516C31C7645A500661B43 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		44D516CB1C7645A500661B43 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		44D516CC1C7645A500661B43 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		44D516CE1C7645A500661B43 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = E07B4CBCC67946DBE3E5C87D /* Pods-NetShoes.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				INFOPLIST_FILE = NetShoes/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = br.com.netshoes.NetShoes;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+			};
+			name = Debug;
+		};
+		44D516CF1C7645A500661B43 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = BD12DBB9E312DB442FE8EB5D /* Pods-NetShoes.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				INFOPLIST_FILE = NetShoes/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = br.com.netshoes.NetShoes;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		44D516B61C7645A500661B43 /* Build configuration list for PBXProject "NetShoes" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				44D516CB1C7645A500661B43 /* Debug */,
+				44D516CC1C7645A500661B43 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		44D516CD1C7645A500661B43 /* Build configuration list for PBXNativeTarget "NetShoes" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				44D516CE1C7645A500661B43 /* Debug */,
+				44D516CF1C7645A500661B43 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 44D516B31C7645A500661B43 /* Project object */;
+}
