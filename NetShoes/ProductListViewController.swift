@@ -2,7 +2,7 @@
 //  ViewController.swift
 //  NetShoes
 //
-//  Created by Reinaldo Almeida on 2/18/16.
+//  Created by Rael Alves on 2/18/16.
 //  Copyright © 2016 Rael Alves. All rights reserved.
 //
 

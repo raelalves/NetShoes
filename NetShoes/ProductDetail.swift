@@ -2,7 +2,7 @@
 //  ProductDetail.swift
 //  NetShoes
 //
-//  Created by Reinaldo Almeida on 2/21/16.
+//  Created by Rael Alves on 2/21/16.
 //  Copyright © 2016 Rael Alves. All rights reserved.
 //
 
