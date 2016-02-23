@@ -26,17 +26,22 @@ class ServiceManager: NSObject {
             .responseObject("value") {
                 (response: Response<Products, NSError>) in
                 
-                if response.result.isSuccess {
+                switch response.result {
                     
-                    let productsResponse = response.result.value
+                case .Success:
                     
-                    if let products = productsResponse?.product {
+                    if let products:[Product] = response.result.value?.product {
                         
                         productsList(products)
+                        
+                    } else {
+                        
+                        errorFunc("Problemas ao Carregar Produtos!")
                     }
                     
-                } else {
+                case .Failure(let error):
                     
+                    debugPrint(error.debugDescription)
                     errorFunc("Problemas ao Carregar Produtos!")
                 }
                 
@@ -56,18 +61,23 @@ class ServiceManager: NSObject {
             .responseObject("value") {
                 (response: Response<Product, NSError>) in
                 
-                if response.result.isSuccess {
+                switch response.result {
                     
-                    let productResponse = response.result.value
+                case .Success:
                     
-                    if let detail = productResponse {
+                    if let product:Product = response.result.value {
                         
-                        productDetail(detail)
+                        productDetail(product)
+                        
+                    } else {
+                        
+                        errorFunc("Problemas ao Carregar detalhes do Produto!")
                     }
                     
-                } else {
+                case .Failure(let error):
                     
-                    errorFunc("Problemas ao Carregar Produto!")
+                    debugPrint(error.debugDescription)
+                    errorFunc("Problemas ao Carregar detalhes do Produto!")
                 }
                 
         }
