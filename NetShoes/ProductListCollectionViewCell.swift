@@ -43,9 +43,9 @@ class ProductListCollectionViewCell: UICollectionViewCell {
         self.layer.borderColor = UIColor.lightGrayColor().CGColor
         
         self.uilbProductName.text = product.name
-        self.uilbProductPrice.text = product.price?.actual_price
+        self.uilbProductPrice.text = product.actual_price
         
-        let imageURLString = String(format: "http:%@", (product.image?.image_small)!)
+        let imageURLString = String(format: "http:%@", (product.image_small)!)
         let imageURL = NSURL(string: imageURLString)!
         self.uilbProductImage.hnk_setImageFromURL(imageURL)
         

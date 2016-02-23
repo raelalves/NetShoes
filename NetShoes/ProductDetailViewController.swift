@@ -88,16 +88,16 @@ class ProductDetailViewController: UIViewController {
         
         let serviceManager:ServiceManager = ServiceManager()
                 
-        serviceManager.getProductDetail(productDetail, productDetail: { (productDetail:ProductDetail) in
+        serviceManager.getProductDetail(productDetail, productDetail: { (productDetail:Product) in
         
             MBProgressHUD.hideAllHUDsForView(self.view, animated: true)
             
             self.uilbProductName.text = productDetail.name
             self.uitvProductDescription.text = productDetail.description
-            self.uilbProductOriginalPrice.text = productDetail.price?.original_price
-            self.uilbProductBadgePrice.text = productDetail.badge?.badge_value
+            self.uilbProductOriginalPrice.text = productDetail.original_price
+            self.uilbProductBadgePrice.text = productDetail.badge_value
             
-            let attr_actual_price = NSMutableAttributedString(string: (productDetail.price?.actual_price)!)
+            let attr_actual_price = NSMutableAttributedString(string: (productDetail.actual_price)!)
             
             if attr_actual_price.length > 2 {
                 
@@ -108,6 +108,7 @@ class ProductDetailViewController: UIViewController {
                 self.uilbProductActualPrice.attributedText = attr_actual_price
             }
 
+            
             for characteristics:Characteristics in productDetail.characteristics! {
                 
                 switch (characteristics.name!) {
@@ -131,11 +132,12 @@ class ProductDetailViewController: UIViewController {
                 
             }
             
-            for items:GalleryItems in productDetail.gallery! {
+            
+            if let gallery:[GalleryImage] = productDetail.gallery {
                 
                 var pos_x:CGFloat = 0
-
-                for galleryImage:GalleryImage in items.galleryItems! {
+                
+                for galleryImage:GalleryImage in gallery {
                     
                     if let image_medium = galleryImage.image_medium {
                         
@@ -161,6 +163,7 @@ class ProductDetailViewController: UIViewController {
                 }
                 
             }
+            
             
             }, errorFunc: { (error) in
                 

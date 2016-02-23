@@ -43,7 +43,7 @@ class ServiceManager: NSObject {
         }
     }
     
-    func getProductDetail(product:Product!, productDetail:ProductDetail -> Void, errorFunc: NSString -> Void) {
+    func getProductDetail(product:Product!, productDetail:Product -> Void, errorFunc: NSString -> Void) {
         
         let strURL:String = String(format: "http://www.netshoes.com.br%@", product.url!)
         let baseURL:String = strURL.stringByAddingPercentEncodingWithAllowedCharacters(NSCharacterSet.URLQueryAllowedCharacterSet())!
@@ -54,7 +54,7 @@ class ServiceManager: NSObject {
         Alamofire
             .request(.GET, baseURL)
             .responseObject("value") {
-                (response: Response<ProductDetail, NSError>) in
+                (response: Response<Product, NSError>) in
                 
                 if response.result.isSuccess {
                     

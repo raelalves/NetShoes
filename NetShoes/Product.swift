@@ -12,41 +12,55 @@ import ObjectMapper
 class Product: Mappable {
     
     var name: String?
+    var description: String?
     var url: String?
-    var price: ProductPrice?
-    var image: ProductImage?
+    var image_small: String?
+    var actual_price: String?
+    var original_price: String?
+    
+    var gallery: [GalleryImage]?
+    var badge_value: String?
+    var characteristics: [Characteristics]?
     
     required init?(_ map: Map) { }
     
     func mapping(map: Map) {
         
         name <- map["name"]
+        description <- map["description"]
         url <- map["url"]
-        image <- map["image"]
-        price <- map["price"]
+        image_small <- map["image.small"]
+        actual_price <- map["price.actual_price"]
+        original_price <- map["original_price"]
+        
+        gallery <- map["attributes.1.items"]
+        badge_value <- map["badge.value"]
+        characteristics <- map["characteristics"]
     }
 }
 
-class ProductPrice: Mappable {
+class Characteristics: Mappable {
     
-    var actual_price: String?
+    var name: String?
+    var value: String?
     
     required init?(_ map: Map) { }
     
     func mapping(map: Map) {
         
-        actual_price <- map["actual_price"]
+        name <- map["name"]
+        value <- map["value"]
     }
 }
 
-class ProductImage: Mappable {
+class GalleryImage: Mappable {
     
-    var image_small: String?
+    var image_medium: String?
     
     required init?(_ map: Map) { }
     
     func mapping(map: Map) {
         
-        image_small <- map["small"]
+        image_medium <- map["image.medium"]
     }
 }
