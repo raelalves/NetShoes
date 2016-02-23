@@ -6,7 +6,7 @@ O desafio consistiu na montagem de uma aplicação modelo.
 
 Requisitos do projeto:
 
-•	Suporte para IOS 8 e 9<\br>
+•	Suporte para IOS 8 e 9
 •	Arquivo .gitignore
 •	Usar Storyboard e AutoLayout
 •	Gestão de dependências no projeto. Ex: Cocoapods
