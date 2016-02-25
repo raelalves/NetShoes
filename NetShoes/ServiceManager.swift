@@ -18,11 +18,8 @@ class ServiceManager: NSObject {
         let strURL:String = "http://www.netshoes.com.br/departamento?Nr=OR(product.productType.displayName:Tênis,product.productType.displayName:Tênis)"
         let baseURL:String = strURL.stringByAddingPercentEncodingWithAllowedCharacters(NSCharacterSet.URLQueryAllowedCharacterSet())!
         
-        Alamofire.Manager.sharedInstance.session.configuration
-            .HTTPAdditionalHeaders?.updateValue("Netshoes App", forKey: "User-Agent")
-        
         Alamofire
-            .request(.GET, baseURL)
+            .request(.GET, baseURL, headers: ["User-Agent": "Netshoes App"])
             .responseObject("value") {
                 (response: Response<Products, NSError>) in
                 
@@ -44,7 +41,6 @@ class ServiceManager: NSObject {
                     debugPrint(error.debugDescription)
                     errorFunc("Problemas ao Carregar Produtos!")
                 }
-                
         }
     }
     
@@ -55,9 +51,9 @@ class ServiceManager: NSObject {
         
         Alamofire.Manager.sharedInstance.session.configuration
             .HTTPAdditionalHeaders?.updateValue("Netshoes App", forKey: "User-Agent")
-        
+         
         Alamofire
-            .request(.GET, baseURL)
+            .request(.GET, baseURL, headers: ["User-Agent": "Netshoes App"])
             .responseObject("value") {
                 (response: Response<Product, NSError>) in
                 
@@ -79,8 +75,8 @@ class ServiceManager: NSObject {
                     debugPrint(error.debugDescription)
                     errorFunc("Problemas ao Carregar detalhes do Produto!")
                 }
-                
         }
+        
     }
     
 }
