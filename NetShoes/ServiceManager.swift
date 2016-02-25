@@ -48,9 +48,6 @@ class ServiceManager: NSObject {
         
         let strURL:String = String(format: "http://www.netshoes.com.br%@", product.url!)
         let baseURL:String = strURL.stringByAddingPercentEncodingWithAllowedCharacters(NSCharacterSet.URLQueryAllowedCharacterSet())!
-        
-        Alamofire.Manager.sharedInstance.session.configuration
-            .HTTPAdditionalHeaders?.updateValue("Netshoes App", forKey: "User-Agent")
          
         Alamofire
             .request(.GET, baseURL, headers: ["User-Agent": "Netshoes App"])
