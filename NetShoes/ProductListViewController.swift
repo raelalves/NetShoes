@@ -8,6 +8,7 @@
 
 import UIKit
 import MBProgressHUD
+import UIScrollView_InfiniteScroll
 
 class ProductListViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource {
 
@@ -15,7 +16,8 @@ class ProductListViewController: UIViewController, UICollectionViewDelegate, UIC
     @IBOutlet weak var uivwNavigationBar: UIView!
     @IBOutlet weak var uiivNavigationBarBrand: UIImageView!
     
-    var productCollection: [Product] = []
+    var productCollection:[Product]!
+    var productCollectionPage: String = String()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -23,8 +25,11 @@ class ProductListViewController: UIViewController, UICollectionViewDelegate, UIC
         self.uicvProductCollection.delegate = self
         self.uicvProductCollection.dataSource = self
 
+        // first page
+        productCollectionPage = "?Nr=OR(product.productType.displayName:Tênis,product.productType.displayName:Tênis)"
+        
         setupUI()
-        getProducts()
+        getProducts(self.productCollectionPage)
     }
 
     override func didReceiveMemoryWarning() {
@@ -49,22 +54,23 @@ class ProductListViewController: UIViewController, UICollectionViewDelegate, UIC
     
     @IBAction func OnGetProducts(sender: AnyObject) {
         
-        self.getProducts()
+        self.getProducts(self.productCollectionPage)
     }
     
-    func getProducts() {
+    func getProducts(page:String) {
         
         let hud = MBProgressHUD.showHUDAddedTo(self.view, animated: true)
         hud.labelText = "Carregando Produtos..."
         hud.show(true)
         
         let serviceManager:ServiceManager = ServiceManager()
-
-        serviceManager.getProducts({ (productList:[Product]) in
+        
+        serviceManager.getProducts(page, completionHandler: { (actual_page, products) -> Void in
             
             MBProgressHUD.hideAllHUDsForView(self.view, animated: true)
-
-            self.productCollection = productList
+        
+            self.productCollectionPage = actual_page
+            self.productCollection = products
             
             self.uicvProductCollection.reloadData()
             
@@ -85,7 +91,7 @@ class ProductListViewController: UIViewController, UICollectionViewDelegate, UIC
         
         alert.addAction(UIAlertAction(title: "Tentar Novamente", style: .Default, handler: { action in
             
-            self.getProducts()
+            self.getProducts(self.productCollectionPage)
             
         }))
         
@@ -103,7 +109,12 @@ class ProductListViewController: UIViewController, UICollectionViewDelegate, UIC
     
     func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         
-        return productCollection.count
+        if (self.productCollection != nil) {
+            
+            return (productCollection.count)
+        }
+        
+        return 0
     }
     
     func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
@@ -129,6 +140,18 @@ class ProductListViewController: UIViewController, UICollectionViewDelegate, UIC
         viewcontroller.product = product;
         
         self.navigationController?.pushViewController(viewcontroller, animated: true)
+        
+    }
+    
+    // MARK: -
+    // Page Control
+    
+    func collectionView(collectionView: UICollectionView, willDisplayCell cell: UICollectionViewCell, forItemAtIndexPath indexPath: NSIndexPath) {
+        
+        if (indexPath.row >= self.productCollection.count) {
+            
+            self.getProducts(self.productCollectionPage)
+        }
         
     }
     

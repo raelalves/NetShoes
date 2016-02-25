@@ -11,12 +11,14 @@ import ObjectMapper
 
 class Products: Mappable {
     
-    var product: [Product]?
+    var products: [Product]?
+    var url: String?
     
     required init?(_ map: Map) { }
     
     func mapping(map: Map) {
         
-        product <- map["products"]
+        products <- map["products"]
+        url <- map["url"]
     }
 }

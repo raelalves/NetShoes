@@ -13,13 +13,46 @@ import ObjectMapper
 
 class ServiceManager: NSObject {
     
-    func getProducts(productsList:[Product] -> Void, errorFunc: NSString -> Void) {
+    enum Router: URLRequestConvertible {
         
-        let strURL:String = "http://www.netshoes.com.br/departamento?Nr=OR(product.productType.displayName:Tênis,product.productType.displayName:Tênis)"
-        let baseURL:String = strURL.stringByAddingPercentEncodingWithAllowedCharacters(NSCharacterSet.URLQueryAllowedCharacterSet())!
+        static let baseURLString = "http://www.netshoes.com.br"
+        
+        case GET_Product_List(query:String)
+        case GET_Product_Detail(query: String)
+        
+        var URLRequest: NSMutableURLRequest {
+            
+            let path: (String) = {
+                
+                switch self {
+                    
+                case .GET_Product_List(let q):
+                    
+                    return ("/departamento\( q )")
+                    
+                case .GET_Product_Detail(let q):
+                    
+                    return (q)
+                }
+                
+            }()
+            
+            let URLString = String(format: "\(Router.baseURLString)%@", path)
+            let URLEncoding = URLString.stringByAddingPercentEncodingWithAllowedCharacters(NSCharacterSet.URLQueryAllowedCharacterSet())!
+            let URLRequest = NSMutableURLRequest(URL: NSURL(string: URLEncoding)!)
+            
+            URLRequest.setValue("Netshoes App", forHTTPHeaderField: "User-Agent")
+            URLRequest.HTTPMethod = "GET"
+            
+            return URLRequest
+        }
+        
+    }
+    
+    func getProducts(page:String, completionHandler: (actual_page:String, products:[Product]) -> Void, errorFunc: NSString -> Void) {
         
         Alamofire
-            .request(.GET, baseURL, headers: ["User-Agent": "Netshoes App"])
+            .request(Router.GET_Product_List(query: page))
             .responseObject("value") {
                 (response: Response<Products, NSError>) in
                 
@@ -27,9 +60,13 @@ class ServiceManager: NSObject {
                     
                 case .Success:
                     
-                    if let products:[Product] = response.result.value?.product {
+//                    if let products:[Product] = response.result.value?.products {
+                    if let result = response.result.value {
                         
-                        productsList(products)
+//                        let products:[Product] = (result.products)!
+//                        let url = result.url
+                        
+                        completionHandler(actual_page: result.url!, products: (result.products)!)
                         
                     } else {
                         
@@ -45,12 +82,9 @@ class ServiceManager: NSObject {
     }
     
     func getProductDetail(product:Product!, productDetail:Product -> Void, errorFunc: NSString -> Void) {
-        
-        let strURL:String = String(format: "http://www.netshoes.com.br%@", product.url!)
-        let baseURL:String = strURL.stringByAddingPercentEncodingWithAllowedCharacters(NSCharacterSet.URLQueryAllowedCharacterSet())!
-         
+    
         Alamofire
-            .request(.GET, baseURL, headers: ["User-Agent": "Netshoes App"])
+            .request(Router.GET_Product_Detail(query: product.url!))
             .responseObject("value") {
                 (response: Response<Product, NSError>) in
                 
@@ -75,5 +109,5 @@ class ServiceManager: NSObject {
         }
         
     }
-    
+
 }

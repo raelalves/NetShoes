@@ -12,7 +12,7 @@ DEPENDENCIES:
   - AlamofireObjectMapper (= 2.1.2)
   - HanekeSwift (= 0.10.1)
   - MBProgressHUD (= 0.9.2)
-  - ObjectMapper
+  - ObjectMapper (= 1.1.5)
 
 SPEC CHECKSUMS:
   Alamofire: 4da478599fccddff361205c8929333d7fe18dceb
