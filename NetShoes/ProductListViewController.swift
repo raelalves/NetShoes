@@ -8,10 +8,9 @@
 
 import UIKit
 import MBProgressHUD
-import UIScrollView_InfiniteScroll
 
-class ProductListViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource {
-
+class ProductListViewController: UIViewController {
+    
     @IBOutlet weak var uicvProductCollection: UICollectionView!
     @IBOutlet weak var uivwNavigationBar: UIView!
     @IBOutlet weak var uiivNavigationBarBrand: UIImageView!
@@ -22,26 +21,26 @@ class ProductListViewController: UIViewController, UICollectionViewDelegate, UIC
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.uicvProductCollection.delegate = self
         self.uicvProductCollection.dataSource = self
-
+        self.uicvProductCollection.delegate = self
+        
         // first page
         productCollectionPage = "?Nr=OR(product.productType.displayName:Tênis,product.productType.displayName:Tênis)"
         
         setupUI()
         getProducts(self.productCollectionPage)
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-
+        
     }
     
     override func preferredStatusBarStyle() -> UIStatusBarStyle {
         
         return UIStatusBarStyle.LightContent
     }
-
+    
     // MARK:-
     // Internal
     
@@ -68,7 +67,7 @@ class ProductListViewController: UIViewController, UICollectionViewDelegate, UIC
         serviceManager.getProducts(page, completionHandler: { (actual_page, products) -> Void in
             
             MBProgressHUD.hideAllHUDsForView(self.view, animated: true)
-        
+            
             self.productCollectionPage = actual_page
             self.productCollection = products
             
@@ -79,8 +78,8 @@ class ProductListViewController: UIViewController, UICollectionViewDelegate, UIC
                 MBProgressHUD.hideAllHUDsForView(self.view, animated: true)
                 
                 self.showMessageError(error as String)
-    
-            })
+                
+        })
     }
     
     func showMessageError(errorMessage:String) {
@@ -96,11 +95,15 @@ class ProductListViewController: UIViewController, UICollectionViewDelegate, UIC
         }))
         
         self.presentViewController(alert, animated: true, completion: nil)
-
+        
     }
     
-    // MARK:-
-    // UICollectionView
+}
+
+// MARK: -
+// MARK: UICollectionView DataSource
+
+extension ProductListViewController: UICollectionViewDataSource {
     
     func numberOfSectionsInCollectionView(collectionView: UICollectionView) -> Int {
         
@@ -126,34 +129,56 @@ class ProductListViewController: UIViewController, UICollectionViewDelegate, UIC
         let product:Product = self.productCollection[indexPath.row]
         
         cell .setupCell(product)
-    
+        
         return cell
         
     }
+    
+}
+
+// MARK: -
+// MARK: UICollectionView Delegate
+
+extension ProductListViewController: UICollectionViewDelegate {
     
     func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
         
         let viewcontroller:ProductDetailViewController = self.storyboard?.instantiateViewControllerWithIdentifier("ProductDetail") as! ProductDetailViewController
         
         let product:Product = self.productCollection[indexPath.row]
-
+        
         viewcontroller.product = product;
         
         self.navigationController?.pushViewController(viewcontroller, animated: true)
         
     }
+}
+
+// MARK: -
+// MARK: Page Control
+
+extension ProductListViewController: UIScrollViewDelegate {
     
-    // MARK: -
-    // Page Control
-    
-    func collectionView(collectionView: UICollectionView, willDisplayCell cell: UICollectionViewCell, forItemAtIndexPath indexPath: NSIndexPath) {
+    func scrollViewDidEndScrollingAnimation(scrollView: UIScrollView) {
         
-        if (indexPath.row >= self.productCollection.count) {
+        let offsetY = scrollView.contentOffset.y
+        let contentHeight = scrollView.contentSize.height
+        
+        if offsetY > contentHeight - scrollView.frame.size.height {
             
-            self.getProducts(self.productCollectionPage)
+            debugPrint("scrollViewDidEndScrollingAnimation")
         }
-        
     }
     
+    func scrollViewDidScroll(scrollView: UIScrollView) {
+        
+        let offsetY = scrollView.contentOffset.y
+        let contentHeight = scrollView.contentSize.height
+        
+        if offsetY > contentHeight - scrollView.frame.size.height {
+            
+            debugPrint("scrollViewDidScroll")
+        }
+    }
 }
 

@@ -60,11 +60,7 @@ class ServiceManager: NSObject {
                     
                 case .Success:
                     
-//                    if let products:[Product] = response.result.value?.products {
                     if let result = response.result.value {
-                        
-//                        let products:[Product] = (result.products)!
-//                        let url = result.url
                         
                         completionHandler(actual_page: result.url!, products: (result.products)!)
                         
